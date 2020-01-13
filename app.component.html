@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+  <div class="navbar-nav">
+      <a class="nav-item nav-link" routerLink="/register">Register</a>
+      <a class="nav-item nav-link" (click)="logout()">Logout</a>
+  </div>
+</nav>
+
+<!-- main app container -->
+<div class="jumbotron">
+  <div class="container">
+      <div class="row">
+          <div class="col-sm-6 offset-sm-3">
+              <app-update-streams></app-update-streams>
+          </div>
+      </div>
+  </div>
+</div>
+<footer class="footer">
+    <p>Hosted by: Epam Services</p>
+    <p>&copy;Copyright 2019 Epam- All Rights Reserved</p>
+    <p>
+      <a href="https://www.epam.com/" style="color:white;">About us</a>.
+    </p>
+</footer>

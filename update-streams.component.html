@@ -1,0 +1,65 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+
+<div class="form-group">
+    
+    <div class="col-md-3">
+        <label for="uId">UID</label>
+    </div>
+    
+    <div class="col-md-3">
+        <label>First Name</label>
+    </div>
+    
+    <div class="col-md-3">
+        <label for="lastName">Last Name</label>
+    </div>
+    
+    <div class="col-md-3">
+        <label for="stream">Stream</label>
+    </div>
+</div>
+
+<br>
+<br>
+
+    <div fxLayout="row" *ngFor="let employee of employeeList">
+        <div class="form-group" *ngIf="employee.streamId == -1">
+            <form #updateStream="ngForm" method="PUT" (ngSubmit)="onSubmit(updateStream)"  novalidate>
+
+                
+
+                <div class="col-md-3" id="uId">
+                    <select name="uId"  ngModel>
+                        <option  [ngValue]="employee.uId" >{{employee.uId}}</option>
+                   </select>
+                  
+                    <!-- <label name="uId" [(ngModel)]="uId">{{ employee.uId }}</label>  --> 
+                    <!-- <input type="hidden" name="uId" (value)="employee.uId" ngModel> -->
+                    <!-- <input type="text" name="uId" ng-model="stream.streamId" ngModel> -->
+                    <!-- <label for="uId" name="uId" (value)="stream.streamId" ngModel>{{ employee.uId }}</label> --> 
+                </div>
+
+                <div class="col-md-3" id="firstname">
+                    <label for="firstName" >{{employee.firstName}}</label>
+                </div>
+
+                <div class="col-md-3" id="lastname">
+                    <label for="lastName">{{employee.lastName}}</label>
+                </div>
+
+                <div class="col-md-3" id="stream">
+                    <select name="streamId"  ngModel>
+                         <option *ngFor="let stream of streamList" [ngValue]="stream.streamId" >{{stream.streamName}}</option>
+                    </select>
+                </div>
+
+                <div class="col-md-3">
+                    <button class="btn btn-primary">Update</button>
+                </div>
+            </form>
+        </div>
+
+     </div>
+   
+
+     

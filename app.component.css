@@ -1,0 +1,14 @@
+ .footer {
+    text-align :center;
+     width: 100%;
+     margin-left: auto;
+     background: #333;
+     padding: 10px 0;
+     color: #fff;
+     bottom: 0;
+     /* position: fixed; */
+ }
+
+ .jumbotron{
+    margin-bottom: 0;
+ }
